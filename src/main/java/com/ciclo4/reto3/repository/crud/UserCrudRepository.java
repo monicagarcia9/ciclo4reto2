@@ -3,6 +3,7 @@ package com.ciclo4.reto3.repository.crud;
 import com.ciclo4.reto3.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface UserCrudRepository extends MongoRepository<User, Integer> {
@@ -13,5 +14,8 @@ public interface UserCrudRepository extends MongoRepository<User, Integer> {
 
     //Para seleccionar el usuario con el id maximo
     Optional<User> findTopByOrderByIdDesc();
+    Optional<User> findByNameOrEmail(String name, String email);
+
+    List<User> findByMonthBirthtDay(String month);
 
 }

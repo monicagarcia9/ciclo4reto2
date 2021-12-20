@@ -38,4 +38,13 @@ public class LaptopRepository {
         laptopCrudRepository.delete(laptop);
     }
 
+    public  List<Laptop> getByPrice(double price){
+        return laptopCrudRepository.findByPriceLessThanEqual(price);}
+
+    public List<Laptop> getByDescriptionContains(String description){
+        return laptopCrudRepository.findByDescriptionContainingIgnoreCase(description);
+    }
+
+
+
 }

@@ -22,7 +22,7 @@ public class LaptopService {
         return laptopRepository.getLaptop(id);
     }
 
-    //Sacado de la tutoria del profe Cristian, gracias profe :)
+
     public Laptop create(Laptop laptop) {
 
         //obtiene el maximo id existente en la coleccion
@@ -103,5 +103,10 @@ public class LaptopService {
         }
         return false;
     }
+    public List<Laptop> getByPrice(double price){
+        return laptopRepository.getByPrice(price);}
 
+
+    public List<Laptop> getByDescriptionContains(String description){
+        return laptopRepository.getByDescriptionContains(description);}
 }

@@ -45,4 +45,12 @@ public class LaptopController {
         return laptopService.delete(id);
     }
 
+    @GetMapping("/price/{price}")
+    public List<Laptop> getByPrice(@PathVariable("price") double price){
+        return laptopService.getByPrice(price);}
+
+    @GetMapping("/description/{description}")
+    public List<Laptop> getByDescriptionContains(@PathVariable("description") String description){
+        return laptopService.getByDescriptionContains(description);
+    }
 }
